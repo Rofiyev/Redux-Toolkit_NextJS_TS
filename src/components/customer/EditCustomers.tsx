@@ -29,11 +29,12 @@ export default function EditCustomers({ id }: { id: string }) {
   );
 
   const [initialValues, setInitialValues] = useState<IForm>({
-    firstname: "",
-    lastname: "",
-    company: "",
-    email: "",
-    password: "",
+    firstname: customers.filter((data: ICustomers) => data.id == id)[0]
+      .firstname,
+    lastname: customers.filter((data: ICustomers) => data.id == id)[0].lastname,
+    company: customers.filter((data: ICustomers) => data.id == id)[0].company,
+    email: customers.filter((data: ICustomers) => data.id == id)[0].email,
+    password: customers.filter((data: ICustomers) => data.id == id)[0].password,
     admin: false,
   });
 
